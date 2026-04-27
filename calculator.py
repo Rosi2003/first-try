@@ -1,22 +1,28 @@
-print("Simple Calculator")
+# Advanced Calculator using Functions
+def add(x, y): return x + y
+def subtract(x, y): return x - y
+def multiply(x, y): return x * y
+def divide(x, y): return x / y if y != 0 else "Cannot divide by zero"
 
-n1 = float(input("Enter first number: "))
-op = input("Enter operator (+, -, *, /): ")
-n2 = float(input("Enter second number: "))
+print("--- Advanced Calculator ---")
 
-if op == "+":
-    print("Answer: ",n1+n2)
-elif op == "-":
-    print("Answer: ",n1-n2)
-elif op == "*":
-    print("Answer: ",n1*n2)
-elif op == "/":
-    if n2 != 0:
-        print("Answer: ",n1/n2)
+try:
+    num1 = float(input("Enter first number: "))
+    num2 = float(input("Enter second number: "))
+    choice = input("Enter operator (+, -, *, /): ")
+
+    if choice == '+':
+        print(f"Result: {add(num1, num2)}")
+    elif choice == '-':
+        print(f"Result: {subtract(num1, num2)}")
+    elif choice == '*':
+        print(f"Result: {multiply(num1, num2)}")
+    elif choice == '/':
+        print(f"Result: {divide(num1, num2)}")
     else:
-        print("Cannot divide by zero")
-else:
-    print("Invalid operator")
+        print("Invalid Operator!")
 
+except ValueError:
+    print("Invalid input! Please enter numbers.")
 
     
